@@ -242,7 +242,7 @@ class Classifier(nn.Module):
         self.linear = nn.Linear(400, 10, device=self.device)
 
     def forward(self, x):
-        h_enc_prev, h_dec_prev, h_enc_total = model.wake_forward(x)
+        h_enc_prev, h_dec_prev, h_enc_total = model.forward(x)
         # print(h_enc_total.shape)
         # exit()
         return self.linear(h_enc_total)
